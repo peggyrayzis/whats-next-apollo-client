@@ -247,11 +247,24 @@ export default Split
 
 # Define your data model with client schemas
 
+```notes
+- client schemas are just like the schemas you write on the server
+- you'll use the extend keyword to extend your remote schema's types
+- this not only allows you to define queries and mutations but it also allows you to add virtual fields onto your server data which is then stripped out before the request hits the server
+- its also worth mentioning that these schemas are not enforced at runtime, instead they're used to power our developer tooling
+```
+
 ---
 
 # One familiar programming model across client & server
 
 <img src="./img/resolvers.png" style={{width: '90vw'}} />
+
+```notes
+- once you have your schema, then you'll specify your resolvers which are just like the resolvers you write on the server
+- the apollo cache has been written to the context so you can read and write to it seamlessly
+- this programming model is elegant and intuitive because you only have to learn it once and then you can be immediately productive on both the client and the server
+```
 
 ---
 
@@ -260,6 +273,12 @@ export default Split
 ![](./img/code-splitting.png)
 
 # Dynamically add resolvers for code-splitting
+
+```notes
+- finally, you'll write your query and specify client fields with the client directive and then bind it to your UI as you normally do
+- we care about making your apps performant and following all of the frontend development best practices, so we've built in the ability to dynamically add your resolvers
+- this allows you to effectively code split and its one of the main reasons why we wanted to merge local state management into core
+```
 
 ---
 
@@ -290,6 +309,14 @@ export default Split
   </h1>
 </FullScreenBackground>
 
+```notes
+but that's not all!
+
+we wanted to deliver on our promise that we made when we first built local state management for apollo client and build out amazing tooling that leverages graphql's type system for local data.
+at the end of the day, it's not just about what code we write but it's also about how we write it.
+we spend a lot of time in our editors, in browser developer tools, and on the command line, so it's essential that our tools work seamlessly. 
+```
+
 ---
 
 <FullScreenBackground src="./img/galaxy.jpg">
@@ -303,9 +330,16 @@ export default Split
   </div>
 </FullScreenBackground>
 
+```notes
+that's why we're so excited to announce that apollo vscode is finally live!
+we've been working so hard on getting this right for you all and we're so excited to share it with the world. do you want to see it?
+```
+
 ---
 
-<video src="./img/vscode-trimmed.mp4" width="100%" height="100%" controls autoPlay muted />
+---
+
+<video src="./img/vscode-trimmed.mp4" width="100%" height="100%" controls autoPlay muted loop />
 
 ---
 
@@ -319,7 +353,9 @@ export default Split
 
 ---
 
-<video src="./img/local-state.mov" width="100%" height="100%" controls autoPlay muted />
+---
+
+<video src="./img/local-state.mov" width="100%" height="100%" controls autoPlay muted loop />
 
 ---
 
@@ -343,6 +379,12 @@ export default Split
     </h2>
   </div>
 </FullScreenBackground>
+
+```notes
+additionally, we've also added the ability to automatically generate typescript definitions for your local data via the apollo cli.
+if you're a typescript fan, then this is huge.
+i know adam neary and the team at airbnb has been using this with great success, so you should definitely check it out if static typing is your jam.
+```
 
 ---
 
@@ -414,6 +456,13 @@ export default Split
     We want your<br/>experience using Apollo<br/>to be the best it can be.
   </h1>
 </FullScreenBackground>
+
+```notes
+- we know how hard state management in react apps can be, which is why we've been so laser focused over the past year on getting this right.
+- at the end of the day, our main goal is to make sure all of you in this room are happy and productive using graphql. and part of that is giving you guidance on how to do state management the right way.
+- and i think all of the new tooling with VSCode and the apollo cli, in addition to the elegant programming model that managing local data with apollo gives you, is really where the future of frontend development is heading.
+- i know you're going to love this. so try it out, let me know what you think, and come find me later if you want to talk state management with apollo client.
+```
 
 ---
 
